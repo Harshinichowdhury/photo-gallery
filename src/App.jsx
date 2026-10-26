@@ -1,10 +1,13 @@
-// Main application component displaying the photo gallery header
+﻿import Gallery from './components/Gallery'
+
+// Main application component displaying the photo gallery header and gallery
 function App() {
   return (
-    <main>
+    <main className="max-w-7xl mx-auto px-4 py-6">
       <h1 className="text-3xl font-bold text-center p-6">
         Photo Gallery
       </h1>
+      <Gallery />
     </main>
   )
 }
