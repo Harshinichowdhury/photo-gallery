@@ -1,6 +1,4 @@
 import { memo } from 'react'
-
-// Wrapped in memo to skip re-rendering when value and onChange are unchanged (such as when a favourite is toggled)
 function SearchBar({ value, onChange }) {
   return (
     <div className="mb-6 max-w-md mx-auto">

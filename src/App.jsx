@@ -1,6 +1,6 @@
 ﻿import Gallery from './components/Gallery'
 
-// Main application component displaying the photo gallery header and gallery
+
 function App() {
   return (
     <main className="max-w-7xl mx-auto px-4 py-6">
