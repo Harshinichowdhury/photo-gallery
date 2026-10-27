@@ -1,5 +1,8 @@
-﻿export default function PhotoCard({ photo, isFavourite, onToggleFavourite }) {
+﻿import { memo } from 'react'
+function PhotoCard({ photo, isFavourite, onToggleFavourite }) {
+
   // Use a resized image endpoint to keep download size small and page fast
+  console.log('PhotoCard render', photo.id)
   const imageUrl = `https://picsum.photos/id/${photo.id}/400/300`
 
   // Descriptive label gives screen readers the author and current favourite state
@@ -45,3 +48,4 @@
     </div>
   )
 }
+export default memo(PhotoCard)

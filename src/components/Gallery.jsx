@@ -1,8 +1,9 @@
-﻿import { useState, useReducer, useEffect, useMemo, useCallback } from 'react'
+import { useState, useReducer, useEffect, useMemo, useCallback } from 'react'
 import useFetchPhotos from '../hooks/useFetchPhotos'
 import Spinner from './Spinner'
 import ErrorMessage from './ErrorMessage'
 import PhotoCard from './PhotoCard'
+import SearchBar from './SearchBar'
 
 // Storage key used to save and retrieve favourites in the browser
 const STORAGE_KEY = 'photo-gallery-favourites'
@@ -86,20 +87,7 @@ export default function Gallery() {
 
   return (
     <div>
-      {/* Controlled search input above the photo grid */}
-      <div className="mb-6 max-w-md mx-auto">
-        <label htmlFor="search-author" className="sr-only">
-          Search by author
-        </label>
-        <input
-          id="search-author"
-          type="text"
-          value={searchTerm}
-          onChange={handleSearchChange}
-          placeholder="Search by author..."
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-        />
-      </div>
+      <SearchBar value={searchTerm} onChange={handleSearchChange} />
 
       {/* Show clear message when no authors match, else render the responsive grid */}
       {filteredPhotos.length === 0 ? (
